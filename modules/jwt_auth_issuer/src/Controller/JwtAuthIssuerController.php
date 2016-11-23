@@ -27,7 +27,7 @@ class JwtAuthIssuerController extends ControllerBase {
   /**
    * The JWT transcoder service.
    *
-   * @var Drupal\jwt\Transcoder\JwtTranscoderInterface
+   * @var \Drupal\jwt\Transcoder\JwtTranscoderInterface
    */
   protected $transcoder;
 
@@ -47,7 +47,7 @@ class JwtAuthIssuerController extends ControllerBase {
 
   /**
    * {@inheritdoc}
-   * 
+   *
    * @param \Drupal\jwt\Transcoder\JwtTranscoderInterface
    *  The JWT transcoder service.
    * @param \Drupal\key\KeyRepositoryInterface $keyRepo
@@ -85,7 +85,7 @@ class JwtAuthIssuerController extends ControllerBase {
    *   Return Hello string.
    */
   public function tokenResponse() {
-    $response = new \stdclass();
+    $response = new \stdClass();
     $response->token = $this->generateToken();
     return new JsonResponse($response);
   }
